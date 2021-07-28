@@ -4,12 +4,16 @@ component: build
 timeoutInSeconds: 6000
 runAs: root
 shell: bash
+env:
+  exportedVariables: 
+    - version
 
 steps:
   - type: Command
     name: "Build Source 1"
     timeoutInSeconds: 400
     command: |
+      version=1.0
       cd src/main/java/org/example/
       javac HelloWorld.java
 outputArtifacts:
